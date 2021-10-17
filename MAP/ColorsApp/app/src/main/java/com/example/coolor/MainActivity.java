@@ -2,14 +2,17 @@ package com.example.coolor;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,8 +22,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Random r = new Random();
         textView = findViewById(R.id.output);
-        textView.setText("Hello World!");
+        textView.setText("Hello world!");
         new Thread(() -> {
             while(true) {
                 textView.setTextColor(getRandomColor());
@@ -32,12 +37,15 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }).start();
+
+        findViewById(R.id.button).setOnClickListener(view -> {
+
+        });
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        textView.setText("Changed! Hello world");
     }
 
     public int getRandomColor(){

@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         cardViews[11] = findViewById(R.id.cminus);
         cardViews[12] = findViewById(R.id.cdiv);
         cardViews[13] = findViewById(R.id.ceq);
-        cardViews[14] = findViewById(R.id.cclear);
+        cardViews[14] = findViewById(R.id.ceq);
         cardViews[15] = findViewById(R.id.cmul);
     }
 
@@ -80,10 +80,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     String expression = result.toString();
                     result = new StringBuilder("");
                     result.append(evaluate(expression).toString());
-                    break;
-
-                case R.id.cclear:
-                    result = new StringBuilder("");
                     break;
 
                 default:
